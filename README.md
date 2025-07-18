@@ -1,5 +1,3 @@
-Here's a suggested README disclaimer for your AWS-focused repository:
-
 # Repository Disclaimer
 
 This repository contains example code, solutions, and implementations using various AWS services. While these examples are designed to demonstrate AWS capabilities and provide learning resources, please note:
