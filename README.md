@@ -1,6 +1,12 @@
 # Repository Disclaimer
 
-This repository contains example code, solutions, and implementations using various AWS services. While these examples are designed to demonstrate AWS capabilities and provide learning resources, please note:
+This repository contains example code, solutions, and implementations using various AWS services. These examples are provided for learning and demonstration purposes only.
+
+⚠️ **Important Notes**:
+- All code and solutions are examples only and should NOT be deployed directly to production environments
+- Always thoroughly test and validate these examples in a development/test environment first
+- Implement proper security measures and best practices before any production deployment
+- Modify and adapt the code to meet your specific requirements and security standards
 
 ⚠️ **Cost Awareness**:
 - The code and solutions in this repository utilize AWS services that may incur costs
@@ -16,4 +22,10 @@ This repository contains example code, solutions, and implementations using vari
   - Properly terminate/cleanup resources when no longer needed
   - Implement appropriate cost control measures
 
-Before implementing any solution from this repository, carefully evaluate the potential costs for your specific use case and requirements. Amazon Web Services provides various tools like the [AWS Pricing Calculator](https://calculator.aws/) to help estimate costs.
+Before implementing any solution from this repository:
+1. Test thoroughly in a non-production environment
+2. Evaluate the potential costs for your specific use case
+3. Review and enhance security measures as needed
+4. Consider using the [AWS Pricing Calculator](https://calculator.aws/) to estimate costs
+
+The examples provided are not guaranteed to be production-ready and should be used as reference material only.
