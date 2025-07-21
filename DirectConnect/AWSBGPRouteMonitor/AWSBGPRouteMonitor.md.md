@@ -23,7 +23,7 @@ To solve this, we need to:
 ## Solution: AWS Lambda and CloudWatch
 This solution uses an AWS Lambda function to query route tables, count VGW-propagated routes, and publish a custom metric to CloudWatch. We’ll also configure a CloudWatch alarm to notify us via Amazon SNS if the route count drops to 0. Finally, we’ll schedule the Lambda function to run every 3 minutes using a CloudWatch Events Rule.
 
-<img width="929" height="561" alt="image" src="https://github.com/user-attachments/assets/eae4ac81-a8c1-4be2-9f99-4c50d0fc0b9e](https://4453gh-werwer-1384-artifacts.s3.us-east-2.amazonaws.com/AWSBGPRouteMonitor+(1).jpg" />
+<img width="929" height="561" alt="image" src="https://4453gh-werwer-1384-artifacts.s3.us-east-2.amazonaws.com/AWSBGPRouteMonitor+(1).jpg" />
 
 
 
