@@ -1,4 +1,4 @@
-####    Currently under construction   #######################################################
+#    Currently under construction   #######################################################
 
 # Exploring AWS's New VPC Route Server: Revolutionizing Dynamic Routing in Your VPC
 
