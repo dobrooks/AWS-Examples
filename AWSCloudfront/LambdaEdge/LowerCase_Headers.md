@@ -130,7 +130,7 @@ Resources:
 
 To handle higher TPS:
 
-1. Request a Service Quota increase through AWS Service Quotas console
+1. Request a Service Quota increase through AWS Service Quotas console (Keep in mind that the limit is for ALL your lambda usage and not just the lambda@edge discussed here)
 2. Configure Reserved Concurrency:
 ```bash
 aws lambda put-function-concurrency \
