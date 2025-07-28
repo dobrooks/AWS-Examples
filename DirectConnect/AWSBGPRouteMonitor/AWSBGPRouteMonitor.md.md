@@ -1,6 +1,7 @@
 # ############### DRAFT - Subject to change ################
 
 # Monitoring BGP Route Health in AWS Direct Connect with Lambda and CloudWatch
+## by Don Brooks 
 
 ## Introduction
 AWS Direct Connect is a dedicated network connection service that establishes a private, high-bandwidth link between your on-premises data center and AWS. Instead of using the public internet, Direct Connect provides a more reliable, secure, and consistent network experience with reduced latency and higher throughput. It supports connection speeds from 1 Gbps to 100 Gbps and can be used to access AWS services across multiple regions. Direct Connect is particularly valuable for organizations that need to transfer large amounts of data, require consistent network performance, or must meet specific compliance requirements for data transmission. Users can establish either dedicated connections (physical ethernet ports dedicated to a customer) or hosted connections (obtained through AWS Direct Connect Partners).
