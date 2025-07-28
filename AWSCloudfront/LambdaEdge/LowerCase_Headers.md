@@ -131,7 +131,21 @@ Resources:
 To handle higher TPS:
 
 1. Request a Service Quota increase through AWS Service Quotas console (Keep in mind that the limit is for ALL your lambda usage and not just the lambda@edge discussed here)
-2. Configure Reserved Concurrency:
+
+2. Optimize your Lambda settings:
+   
+| Reserved Concurrency | Provisioned Concurrency |
+|---------------------|----------------------|
+| Sets upper limit on concurrent executions | Initializes requested number of environments in advance |
+| Guarantees function can reach specified concurrency | Eliminates cold starts by keeping functions warm |
+| Prevents function from using all regional concurrency | Maintains consistent start-up latency |
+| No pre-initialization of environments | Pre-initializes execution environments |
+| Cold starts can occur | Prevents cold starts |
+| No additional charges beyond normal Lambda costs | Incurs additional costs for pre-initialized environments |
+| Used for capacity management | Used for performance optimization |
+| No auto-scaling configuration needed | Can be configured with auto scaling |
+
+3. Configure Reserved Concurrency:
 ```bash
 aws lambda put-function-concurrency \
     --function-name your-function-name \
