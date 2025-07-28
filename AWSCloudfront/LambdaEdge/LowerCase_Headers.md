@@ -1,5 +1,5 @@
 # Implementing High-Performance Header Normalization with AWS CloudFront Lambda@Edge
-## by Don Brooks @ Cloud Hour
+## by Don Brooks 
 
 ## Introduction
 
