@@ -227,37 +227,40 @@ To run the function every 3 minutes:
    - Enter a name for the schedule i.e. **dx_monitor_Lambda_schedule**
    - Enter a <optional> description.
    - In the Schedule Pattern Section
-   -     Select Recurring
-   -     Select "Rate Base" for Schedule Type
-   -     Set "Rate Expression" to 3 <minutes>
-   -     Select "Next"
-   -     Select "AWS Lambda Invoke"
-   -     Select your lambda function "MonitorVgwPropagatedRoutes" from the drop down.
-   -     Click Next
-   -     Make sure the Schedule State is Enable
-   -     Under Permission select "Create new role for this schedule"
-   -         Name the Role "Amazon_EventBridge_dx_monitor"
-   -     Click "Next"
-   -     Review the information and click "Create Schedule"
+       - Select Recurring
+       - Select "Rate Base" for Schedule Type
+           - Set "Rate Expression" to 3 <minutes>
+           - Select "Next"
+       - Select "AWS Lambda Invoke"
+           - Select your lambda function "MonitorVgwPropagatedRoutes" from the drop down.
+           - Click Next
+       - Make sure the Schedule State is Enable
+       - Under Permission select "Create new role for this schedule"
+       -   Name the Role "Amazon_EventBridge_dx_monitor"
+       - Click "Next"
+   - Review the information and click "Create Schedule"
 
 
 # ################ Stll working on this section
 
 ### Step 4: Set Up a CloudWatch Alarm
 To alert when no routes are propagated (count = 0) for a specific subnet:
-1. **Create an SNS Topic**:
-   In the SNS Console (https://console.aws.amazon.com/sns/), create a topic (e.g., `VgwRouteAlarmTopic`).
+1. **Create an SNS Topic and Subscription**
    
-        Select "Standard" topic as order is not important and volume is low.
-        Provide a name for your topic aka "dx_monitor-Topic
-        Hit <Create>
-   - On the SNS Main Page click on Subscriptions-> Create Subscriptioln
-   -     Enter the arn of the topic you just created
-   -     Select the delivery method (Usually SMS or EMail)
-   -     Enter Email Address under endpoint
-   -     <Click on "Create Subscription"
-   -     Note:  You will receive an email at the address you entered to confirm your enrollment to the subscription
-   - 
+   In the SNS Console (https://console.aws.amazon.com/sns/), create a topic (e.g., `VgwRouteAlarmTopic`).
+   - From the main SNS Console page select "Topics"
+   - Select "Standard" topic as order is not important and volume is low.
+   - Provide a name for your topic aka "VgwRouteAlarmTopic"
+   - Select <Create>
+       
+   On the SNS Main Page click on Subscriptions-> Create Subscription
+   
+   - Enter the arn of the topic you just created
+   - Select the delivery method (Usually SMS or EMail)
+   - Enter Email Address under endpoint
+   - <Click on "Create Subscription"
+           Note:  You will receive an email at the address you entered to confirm your enrollment to the subscription
+       
    - OR if you prefer to configure via the AWS CLI to Subscribe an email or SMS endpoin:
  
      ```bash
