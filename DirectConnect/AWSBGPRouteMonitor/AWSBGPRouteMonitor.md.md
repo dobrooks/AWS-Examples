@@ -179,7 +179,7 @@ Here’s the Python code for the Lambda function:
 
 ### Step 2: Deploy the Lambda Function and corresponding permissions
 1. **Configure IAM Policy and Role**:
-   - Create a IAM Policy called **dx_route_monitor_policy** and add these permissions (Swicth to JSON edit)
+   - Create a IAM $${\color{red}POLICY}$$ called **dx_route_monitor_policy** and add these permissions (Swicth to JSON edit)
      ```json
      {
          "Version": "2012-10-17",
@@ -202,10 +202,10 @@ Here’s the Python code for the Lambda function:
      }
      ```
 
-   - Create an IAM role to be used by the Lambda function for execution called **dx_route_monitor_role**.
+   - Create an IAM $${\color{red}ROLE}$$ to be used by the Lambda function for execution called **dx_route_monitor_role**.
      
      Select AWS Service -> lambda.
-     Choose the policy created above "dx_route_monitor_plicy"
+     Choose the policy created above "dx_route_monitor_policy"
 
 
    - 
