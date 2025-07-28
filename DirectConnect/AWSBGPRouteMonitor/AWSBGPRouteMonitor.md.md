@@ -246,8 +246,20 @@ To run the function every 3 minutes:
 ### Step 4: Set Up a CloudWatch Alarm
 To alert when no routes are propagated (count = 0) for a specific subnet:
 1. **Create an SNS Topic**:
-   - In the SNS Console (https://console.aws.amazon.com/sns/), create a topic (e.g., `VgwRouteAlarmTopic`).
-   - Subscribe an email or SMS endpoint:
+   In the SNS Console (https://console.aws.amazon.com/sns/), create a topic (e.g., `VgwRouteAlarmTopic`).
+   
+        Select "Standard" topic as order is not important and volume is low.
+        Provide a name for your topic aka "dx_monitor-Topic
+        Hit <Create>
+   - On the SNS Main Page click on Subscriptions-> Create Subscriptioln
+   -     Enter the arn of the topic you just created
+   -     Select the delivery method (Usually SMS or EMail)
+   -     Enter Email Address under endpoint
+   -     <Click on "Create Subscription"
+   -     Note:  You will receive an email at the address you entered to confirm your enrollment to the subscription
+   - 
+   - OR if you prefer to configure via the AWS CLI to Subscribe an email or SMS endpoin:
+ 
      ```bash
      aws sns create-topic --name VgwRouteAlarmTopic --region us-east-1
      aws sns subscribe \
@@ -256,7 +268,7 @@ To alert when no routes are propagated (count = 0) for a specific subnet:
        --notification-endpoint <*your-email@example.com*> \
        --region us-east-1
      ```
-2. **Create the Alarm**:
+3. **Create the Alarm**:
    - Use the AWS CLI to create an alarm for a specific subnet:
      ```bash
      aws cloudwatch put-metric-alarm \
@@ -277,7 +289,7 @@ To alert when no routes are propagated (count = 0) for a specific subnet:
      ```
    - Replace `subnet-xxxxxxxx`, `rtb-xxxxxxxx`, `vgw-xxxxxxxx`, and the SNS topic ARN with your values.
    - 
-3. **Automate for Multiple Subnets**:
+4. **Automate for Multiple Subnets**:
    - Since you have multiple subnets, use a script to create alarms for each subnet based on the Lambda function’s output. Here’s a Python script to automate this:
 
      ```python
