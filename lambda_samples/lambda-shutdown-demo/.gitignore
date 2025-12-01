@@ -1,7 +1,0 @@
-*.zip
-*.pyc
-__pycache__/
-.env
-*.log
-response.json
-api-id.txt
